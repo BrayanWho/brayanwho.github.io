@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BrayanWho | Mathematical Storytelling Lab</title>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
   <style>
     :root {
       --bg-main: #0b0f19;       /* Fondo oscuro, estilo terminal */
@@ -100,12 +97,12 @@
 
     .btn {
       display: inline-block;
-      margin: 8px;
-      padding: 10px 24px;
+      margin: 6px;
+      padding: 10px 20px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: all 0.2s ease;
     }
 
@@ -165,17 +162,39 @@
 
     .card {
       background: var(--bg-card);
-      padding: 30px;
       border-radius: 8px;
       border: 1px solid var(--border-color);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      overflow: hidden;
       transition: border-color 0.2s ease;
     }
 
     .card:hover {
       border-color: var(--accent-blue);
+    }
+
+    /* Contenedor de la vista previa del video o visualización */
+    .card-image {
+      width: 100%;
+      height: 180px;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-family: monospace;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .card-content {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
     }
 
     .card h3 {
@@ -187,17 +206,20 @@
     .card p {
       font-size: 1rem;
       color: var(--text-muted);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    .math-box {
-      background: rgba(11, 15, 25, 0.6);
-      padding: 12px;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      border-left: 3px solid var(--accent-blue);
-      font-size: 0.95rem;
-      overflow-x: auto;
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-card {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      margin: 0;
+      flex-grow: 1;
+      text-align: center;
     }
 
     .skills-grid {
@@ -274,34 +296,66 @@
   <div class="card-container">
 
     <div class="card">
-      <h3>🔺 Pascal Triangle Exploration</h3>
-      <p>Explorando patrones ocultos del Triángulo de Pascal mediante Python, visualización y storytelling matemático.</p>
-      <div class="math-box">
-        \[ \binom{n}{k} \equiv 1 \pmod 2 \implies \text{Sierpinski} \]
+      <div class="card-image">
+        <span>[ Visualización / Manim Preview ]</span>
+      </div>
+      <div class="card-content">
+        <div>
+          <h3>🔺 Pascal Triangle Exploration</h3>
+          <p>Explorando patrones ocultos del Triángulo de Pascal mediante Python, visualizaciones dinámicas y storytelling matemático.</p>
+        </div>
+        <div class="card-actions">
+          <a href="#" class="btn btn-secondary btn-card">📺 Video</a>
+          <a href="https://github.com/brayanwho" target="_blank" class="btn btn-secondary btn-card">💻 Código</a>
+        </div>
       </div>
     </div>
 
     <div class="card">
-      <h3>🎲 Monte Carlo & π</h3>
-      <p>¿Cómo puede el azar aproximar π? Simulación probabilística usando Python.</p>
-      <div class="math-box">
-        \[ \pi \approx 4 \times \frac{\text{Puntos dentro del Círculo}}{\text{Total de Puntos}} \]
+      <div class="card-image">
+        <span>[ Simulación / Monte Carlo Preview ]</span>
+      </div>
+      <div class="card-content">
+        <div>
+          <h3>🎲 Monte Carlo & π</h3>
+          <p>¿Cómo puede el azar aproximar el valor de π? Una simulación probabilística y geométrica desarrollada en Python.</p>
+        </div>
+        <div class="card-actions">
+          <a href="#" class="btn btn-secondary btn-card">📺 Video</a>
+          <a href="https://github.com/brayanwho" target="_blank" class="btn btn-secondary btn-card">💻 Código</a>
+        </div>
       </div>
     </div>
 
     <div class="card">
-      <h3>♾️ Cantor and Infinity</h3>
-      <p>Una exploración visual de infinitos de diferentes tamaños inspirada en teoría de conjuntos.</p>
-      <div class="math-box">
-        \[ |\mathbb{N}| = \aleph_0 < 2^{\aleph_0} = |\mathbb{R}| \]
+      <div class="card-image">
+        <span>[ Animación / Set Theory Preview ]</span>
+      </div>
+      <div class="card-content">
+        <div>
+          <h3>♾️ Cantor and Infinity</h3>
+          <p>Una exploración visual y narrativa sobre los infinitos de diferentes tamaños, inspirada en la teoría de conjuntos cardinales.</p>
+        </div>
+        <div class="card-actions">
+          <a href="#" class="btn btn-secondary btn-card">📺 Video</a>
+          <a href="https://github.com/brayanwho" target="_blank" class="btn btn-secondary btn-card">💻 Código</a>
+        </div>
       </div>
     </div>
 
     <div class="card">
-      <h3>📊 Educational Data Analysis</h3>
-      <p>Análisis de resultados académicos e ICFES usando Python, dashboards y visualización.</p>
-      <div class="math-box">
-        \[ \text{Análisis exploratorio} \rightarrow \text{Modelado} \rightarrow \text{Insights} \]
+      <div class="card-image">
+        <span>[ Dashboard / Analytics Preview ]</span>
+      </div>
+      <div class="card-content">
+        <div>
+          <h3>📊 Educational Data Analysis</h3>
+          <p>Análisis de resultados académicos históricos usando Python y librerías de datos para identificar brechas de aprendizaje.</p>
+        </div>
+        <div class="card-actions">
+          <a href="#" class="btn btn-secondary btn-card">📊 Reporte</a>
+          <a href="https://github.com/brayanwho" target="_blank" class="btn btn-secondary btn-card">💻 Código</a>
+        </div>
       </div>
     </div>
 
@@ -315,6 +369,7 @@
     <div class="skill-tag">SQL</div>
     <div class="skill-tag">Pandas</div>
     <div class="skill-tag">NumPy</div>
+    <div class="skill-tag">Manim</div>
     <div class="skill-tag">Matplotlib</div>
     <div class="skill-tag">Jupyter</div>
     <div class="skill-tag">Git</div>
